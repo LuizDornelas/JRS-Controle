@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31424.327
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JRS Controle", "JRS Controle\JRS Controle.csproj", "{BFC1E225-888A-46E1-9D37-5DF2266A7406}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BFC1E225-888A-46E1-9D37-5DF2266A7406}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BFC1E225-888A-46E1-9D37-5DF2266A7406}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BFC1E225-888A-46E1-9D37-5DF2266A7406}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BFC1E225-888A-46E1-9D37-5DF2266A7406}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C76ADA49-069B-444B-82EB-2E5644460E2C}
+	EndGlobalSection
+EndGlobal
