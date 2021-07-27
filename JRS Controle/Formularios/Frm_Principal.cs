@@ -1,27 +1,22 @@
 ﻿using JRS_Controle.Classes;
+using JRS_Controle.Formularios;
 using Npgsql;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace JRS_Controle
 {
     public partial class Frm_Principal : Form
     {
+        string nome;
         public Frm_Principal(string name)
         {
             InitializeComponent();
 
-            lbl_titulo.Text = $"Bem vindo, {name}!";
+            nome = name;
 
-            preenchedgv();
+            AbrirForm(new Frm_Dashboard(nome));
         }
 
         private void btn_encerrar_Click(object sender, EventArgs e)
@@ -42,84 +37,39 @@ namespace JRS_Controle
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
-        }
-        private void preenchedgv()
+        }        
+        private void AbrirForm(object form)
         {
-            double total = 0;
-            int count = 0;
-            dgv_clientes.Rows.Clear();
-            dgv_clientes.DataSource = null;
-            NpgsqlConnection pgsqlConnection = null;
-            try
+            if (this.pnl_principal.Controls.Count > 0)
             {
-                ConexaoDB objconexao = new ConexaoDB();
-
-                pgsqlConnection = objconexao.getConexao();
-                pgsqlConnection.Open();
-
-                string datagrid = "SELECT * FROM public.clientes order by pedido;";
-
-                NpgsqlCommand cmd = new NpgsqlCommand(datagrid, pgsqlConnection);
-
-                NpgsqlDataReader dgv = cmd.ExecuteReader();
-
-                foreach (var db in dgv)
-                {
-                    string pedido = dgv["pedido"].ToString();
-                    string nome = dgv["nome"].ToString();
-                    string descricao = dgv["descricao"].ToString();
-                    double valor = Convert.ToDouble(dgv["valor"].ToString());
-                    string status = dgv["status"].ToString();
-                    DateTime data_entrada = Convert.ToDateTime(dgv["entrada"].ToString());
-
-                    if (status == "Em andamento")
-                    {
-                        total += valor;
-                        count += 1;
-                    }
-
-                    if (dgv["saida"].ToString() != "")
-                    {
-                        DateTime data_saida = Convert.ToDateTime(dgv["saida"].ToString());
-                        string[] nova_linha = new string[]
-
-                                                    {
-                                                    pedido,
-                                                    nome,
-                                                    descricao,
-                                                    valor.ToString("F"),
-                                                    status,
-                                                    data_entrada.ToString("dd/MM/yyyy HH:mm:ss"),
-                                                    data_saida.ToString("dd/MM/yyyy HH:mm:ss")
-        };
-                        dgv_clientes.Rows.Add(nova_linha);
-                    }
-                    else
-                    {
-                        string[] nova_linha = new string[]
-
-                                                    {
-                                                    pedido,
-                                                    nome,
-                                                    descricao,
-                                                    valor.ToString("F"),
-                                                    status,
-                                                    data_entrada.ToString("dd/MM/yyyy HH:mm:ss")
-        };
-                        dgv_clientes.Rows.Add(nova_linha);
-                    }
-                }
-                lbl_quantidade.Text = $"Pendente pagamento: {count}";             
+                this.pnl_principal.Controls.RemoveAt(0);
             }
-            finally
-            {
-                pgsqlConnection.Close();
-            }
+            Form fh = form as Form;
+            fh.TopLevel = false;
+            fh.Dock = DockStyle.Fill;
+            this.pnl_principal.Controls.Add(fh);
+            this.pnl_principal.Tag = fh;
+            fh.Show();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btn_novo_Click(object sender, EventArgs e)
         {
-            preenchedgv();
+            AbrirForm(new Frm_Novo());
+        }
+
+        private void btn_principal_Click(object sender, EventArgs e)
+        {
+            AbrirForm(new Frm_Dashboard(nome));
+        }
+
+        private void btn_atualizar_Click(object sender, EventArgs e)
+        {
+            AbrirForm(new Frm_Atualizar());
+        }
+
+        private void btn_excluir_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

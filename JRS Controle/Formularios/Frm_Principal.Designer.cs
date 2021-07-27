@@ -30,43 +30,30 @@ namespace JRS_Controle
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Principal));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnl_barra = new System.Windows.Forms.Panel();
             this.btn_encerrar = new System.Windows.Forms.PictureBox();
-            this.panelContenedor = new System.Windows.Forms.Panel();
-            this.lbl_titulo = new System.Windows.Forms.Label();
+            this.pnl_principal = new System.Windows.Forms.Panel();
             this.ptb_logo = new System.Windows.Forms.PictureBox();
             this.btn_principal = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btn_novo = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btn_atualizar = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btn_excluir = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.btnsalir = new System.Windows.Forms.PictureBox();
-            this.MenuVertical = new System.Windows.Forms.Panel();
+            this.btn_encerrar_2 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.lbl_quantidade = new System.Windows.Forms.Label();
-            this.dgv_clientes = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.N_pedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Data_Entrada = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Data_Saida = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button1 = new System.Windows.Forms.Button();
             this.pnl_barra.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_encerrar)).BeginInit();
-            this.panelContenedor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptb_logo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnsalir)).BeginInit();
-            this.MenuVertical.SuspendLayout();
+            this.btn_encerrar_2.SuspendLayout();
             this.panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_clientes)).BeginInit();
             this.SuspendLayout();
             // 
             // pnl_barra
@@ -94,28 +81,14 @@ namespace JRS_Controle
             this.btn_encerrar.Tag = "";
             this.btn_encerrar.Click += new System.EventHandler(this.btn_encerrar_Click);
             // 
-            // panelContenedor
+            // pnl_principal
             // 
-            this.panelContenedor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            this.panelContenedor.Controls.Add(this.button1);
-            this.panelContenedor.Controls.Add(this.dgv_clientes);
-            this.panelContenedor.Controls.Add(this.lbl_titulo);
-            this.panelContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelContenedor.Location = new System.Drawing.Point(220, 38);
-            this.panelContenedor.Name = "panelContenedor";
-            this.panelContenedor.Size = new System.Drawing.Size(1080, 612);
-            this.panelContenedor.TabIndex = 2;
-            // 
-            // lbl_titulo
-            // 
-            this.lbl_titulo.AutoSize = true;
-            this.lbl_titulo.Font = new System.Drawing.Font("Century Gothic", 18F);
-            this.lbl_titulo.ForeColor = System.Drawing.Color.White;
-            this.lbl_titulo.Location = new System.Drawing.Point(28, 32);
-            this.lbl_titulo.Name = "lbl_titulo";
-            this.lbl_titulo.Size = new System.Drawing.Size(142, 30);
-            this.lbl_titulo.TabIndex = 1;
-            this.lbl_titulo.Text = "Bem vindo";
+            this.pnl_principal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            this.pnl_principal.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnl_principal.Location = new System.Drawing.Point(220, 38);
+            this.pnl_principal.Name = "pnl_principal";
+            this.pnl_principal.Size = new System.Drawing.Size(1080, 612);
+            this.pnl_principal.TabIndex = 2;
             // 
             // ptb_logo
             // 
@@ -143,6 +116,7 @@ namespace JRS_Controle
             this.btn_principal.TabIndex = 1;
             this.btn_principal.Text = "Principal";
             this.btn_principal.UseVisualStyleBackColor = false;
+            this.btn_principal.Click += new System.EventHandler(this.btn_principal_Click);
             // 
             // panel1
             // 
@@ -152,22 +126,23 @@ namespace JRS_Controle
             this.panel1.Size = new System.Drawing.Size(5, 32);
             this.panel1.TabIndex = 2;
             // 
-            // button2
+            // btn_novo
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Century Gothic", 11.25F);
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(3, 172);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(217, 32);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Novo";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btn_novo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.btn_novo.FlatAppearance.BorderSize = 0;
+            this.btn_novo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.btn_novo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_novo.Font = new System.Drawing.Font("Century Gothic", 11.25F);
+            this.btn_novo.ForeColor = System.Drawing.Color.White;
+            this.btn_novo.Image = ((System.Drawing.Image)(resources.GetObject("btn_novo.Image")));
+            this.btn_novo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_novo.Location = new System.Drawing.Point(3, 172);
+            this.btn_novo.Name = "btn_novo";
+            this.btn_novo.Size = new System.Drawing.Size(217, 32);
+            this.btn_novo.TabIndex = 3;
+            this.btn_novo.Text = "Novo";
+            this.btn_novo.UseVisualStyleBackColor = false;
+            this.btn_novo.Click += new System.EventHandler(this.btn_novo_Click);
             // 
             // panel2
             // 
@@ -177,22 +152,23 @@ namespace JRS_Controle
             this.panel2.Size = new System.Drawing.Size(5, 32);
             this.panel2.TabIndex = 4;
             // 
-            // button3
+            // btn_atualizar
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Century Gothic", 11.25F);
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(3, 210);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(217, 32);
-            this.button3.TabIndex = 5;
-            this.button3.Text = "Atualizar";
-            this.button3.UseVisualStyleBackColor = false;
+            this.btn_atualizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.btn_atualizar.FlatAppearance.BorderSize = 0;
+            this.btn_atualizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.btn_atualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_atualizar.Font = new System.Drawing.Font("Century Gothic", 11.25F);
+            this.btn_atualizar.ForeColor = System.Drawing.Color.White;
+            this.btn_atualizar.Image = ((System.Drawing.Image)(resources.GetObject("btn_atualizar.Image")));
+            this.btn_atualizar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_atualizar.Location = new System.Drawing.Point(3, 210);
+            this.btn_atualizar.Name = "btn_atualizar";
+            this.btn_atualizar.Size = new System.Drawing.Size(217, 32);
+            this.btn_atualizar.TabIndex = 5;
+            this.btn_atualizar.Text = "Atualizar";
+            this.btn_atualizar.UseVisualStyleBackColor = false;
+            this.btn_atualizar.Click += new System.EventHandler(this.btn_atualizar_Click);
             // 
             // panel3
             // 
@@ -202,22 +178,23 @@ namespace JRS_Controle
             this.panel3.Size = new System.Drawing.Size(5, 32);
             this.panel3.TabIndex = 6;
             // 
-            // button4
+            // btn_excluir
             // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Century Gothic", 11.25F);
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(3, 248);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(217, 32);
-            this.button4.TabIndex = 7;
-            this.button4.Text = "Excluir";
-            this.button4.UseVisualStyleBackColor = false;
+            this.btn_excluir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.btn_excluir.FlatAppearance.BorderSize = 0;
+            this.btn_excluir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.btn_excluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_excluir.Font = new System.Drawing.Font("Century Gothic", 11.25F);
+            this.btn_excluir.ForeColor = System.Drawing.Color.White;
+            this.btn_excluir.Image = ((System.Drawing.Image)(resources.GetObject("btn_excluir.Image")));
+            this.btn_excluir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_excluir.Location = new System.Drawing.Point(3, 248);
+            this.btn_excluir.Name = "btn_excluir";
+            this.btn_excluir.Size = new System.Drawing.Size(217, 32);
+            this.btn_excluir.TabIndex = 7;
+            this.btn_excluir.Text = "Excluir";
+            this.btn_excluir.UseVisualStyleBackColor = false;
+            this.btn_excluir.Click += new System.EventHandler(this.btn_excluir_Click);
             // 
             // panel4
             // 
@@ -231,7 +208,7 @@ namespace JRS_Controle
             // 
             this.btnsalir.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnsalir.Image = ((System.Drawing.Image)(resources.GetObject("btnsalir.Image")));
-            this.btnsalir.Location = new System.Drawing.Point(3, 571);
+            this.btnsalir.Location = new System.Drawing.Point(0, 551);
             this.btnsalir.Name = "btnsalir";
             this.btnsalir.Size = new System.Drawing.Size(39, 37);
             this.btnsalir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -239,25 +216,50 @@ namespace JRS_Controle
             this.btnsalir.TabStop = false;
             this.btnsalir.Click += new System.EventHandler(this.btnsalir_Click);
             // 
-            // MenuVertical
+            // btn_encerrar_2
             // 
-            this.MenuVertical.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            this.MenuVertical.Controls.Add(this.panel5);
-            this.MenuVertical.Controls.Add(this.btnsalir);
-            this.MenuVertical.Controls.Add(this.panel4);
-            this.MenuVertical.Controls.Add(this.button4);
-            this.MenuVertical.Controls.Add(this.panel3);
-            this.MenuVertical.Controls.Add(this.button3);
-            this.MenuVertical.Controls.Add(this.panel2);
-            this.MenuVertical.Controls.Add(this.button2);
-            this.MenuVertical.Controls.Add(this.panel1);
-            this.MenuVertical.Controls.Add(this.btn_principal);
-            this.MenuVertical.Controls.Add(this.ptb_logo);
-            this.MenuVertical.Dock = System.Windows.Forms.DockStyle.Left;
-            this.MenuVertical.Location = new System.Drawing.Point(0, 38);
-            this.MenuVertical.Name = "MenuVertical";
-            this.MenuVertical.Size = new System.Drawing.Size(220, 612);
-            this.MenuVertical.TabIndex = 1;
+            this.btn_encerrar_2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.btn_encerrar_2.Controls.Add(this.label2);
+            this.btn_encerrar_2.Controls.Add(this.label1);
+            this.btn_encerrar_2.Controls.Add(this.panel5);
+            this.btn_encerrar_2.Controls.Add(this.btnsalir);
+            this.btn_encerrar_2.Controls.Add(this.panel4);
+            this.btn_encerrar_2.Controls.Add(this.btn_excluir);
+            this.btn_encerrar_2.Controls.Add(this.panel3);
+            this.btn_encerrar_2.Controls.Add(this.btn_atualizar);
+            this.btn_encerrar_2.Controls.Add(this.panel2);
+            this.btn_encerrar_2.Controls.Add(this.btn_novo);
+            this.btn_encerrar_2.Controls.Add(this.panel1);
+            this.btn_encerrar_2.Controls.Add(this.btn_principal);
+            this.btn_encerrar_2.Controls.Add(this.ptb_logo);
+            this.btn_encerrar_2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btn_encerrar_2.Location = new System.Drawing.Point(0, 38);
+            this.btn_encerrar_2.Name = "btn_encerrar_2";
+            this.btn_encerrar_2.Size = new System.Drawing.Size(220, 612);
+            this.btn_encerrar_2.TabIndex = 1;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.label2.Location = new System.Drawing.Point(122, 591);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(93, 16);
+            this.label2.TabIndex = 18;
+            this.label2.Text = "Luiz Dornelas";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(0, 591);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(126, 17);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "Desenvolvido por:";
             // 
             // panel5
             // 
@@ -278,155 +280,27 @@ namespace JRS_Controle
             this.lbl_quantidade.TabIndex = 0;
             this.lbl_quantidade.Text = "Pendente pagamento:";
             // 
-            // dgv_clientes
-            // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.dgv_clientes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgv_clientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgv_clientes.BackgroundColor = System.Drawing.Color.White;
-            this.dgv_clientes.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgv_clientes.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dgv_clientes.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_clientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgv_clientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_clientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.N_pedido,
-            this.Nome,
-            this.Descricao,
-            this.Valor,
-            this.Status,
-            this.Data_Entrada,
-            this.Data_Saida});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_clientes.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dgv_clientes.EnableHeadersVisualStyles = false;
-            this.dgv_clientes.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgv_clientes.Location = new System.Drawing.Point(33, 92);
-            this.dgv_clientes.Name = "dgv_clientes";
-            this.dgv_clientes.ReadOnly = true;
-            this.dgv_clientes.RowHeadersVisible = false;
-            this.dgv_clientes.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.dgv_clientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_clientes.Size = new System.Drawing.Size(1006, 482);
-            this.dgv_clientes.TabIndex = 2;
-            this.dgv_clientes.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
-            this.dgv_clientes.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
-            this.dgv_clientes.ThemeStyle.AlternatingRowsStyle.Font = null;
-            this.dgv_clientes.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
-            this.dgv_clientes.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
-            this.dgv_clientes.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.dgv_clientes.ThemeStyle.BackColor = System.Drawing.Color.White;
-            this.dgv_clientes.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgv_clientes.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.dgv_clientes.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dgv_clientes.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            this.dgv_clientes.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.dgv_clientes.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_clientes.ThemeStyle.HeaderStyle.Height = 21;
-            this.dgv_clientes.ThemeStyle.ReadOnly = true;
-            this.dgv_clientes.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
-            this.dgv_clientes.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dgv_clientes.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            this.dgv_clientes.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.dgv_clientes.ThemeStyle.RowsStyle.Height = 22;
-            this.dgv_clientes.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgv_clientes.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            // 
-            // N_pedido
-            // 
-            this.N_pedido.HeaderText = "Nº pedido";
-            this.N_pedido.Name = "N_pedido";
-            this.N_pedido.ReadOnly = true;
-            // 
-            // Nome
-            // 
-            this.Nome.HeaderText = "Nome";
-            this.Nome.Name = "Nome";
-            this.Nome.ReadOnly = true;
-            // 
-            // Descricao
-            // 
-            this.Descricao.HeaderText = "Descricao";
-            this.Descricao.Name = "Descricao";
-            this.Descricao.ReadOnly = true;
-            // 
-            // Valor
-            // 
-            this.Valor.HeaderText = "Valor";
-            this.Valor.Name = "Valor";
-            this.Valor.ReadOnly = true;
-            // 
-            // Status
-            // 
-            this.Status.HeaderText = "Status";
-            this.Status.Name = "Status";
-            this.Status.ReadOnly = true;
-            // 
-            // Data_Entrada
-            // 
-            this.Data_Entrada.HeaderText = "Data Entrada";
-            this.Data_Entrada.Name = "Data_Entrada";
-            this.Data_Entrada.ReadOnly = true;
-            // 
-            // Data_Saida
-            // 
-            this.Data_Saida.HeaderText = "Data Saida";
-            this.Data_Saida.Name = "Data_Saida";
-            this.Data_Saida.ReadOnly = true;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 11.25F);
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(1039, 92);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(38, 40);
-            this.button1.TabIndex = 6;
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // Frm_Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1300, 650);
-            this.Controls.Add(this.panelContenedor);
-            this.Controls.Add(this.MenuVertical);
+            this.Controls.Add(this.pnl_principal);
+            this.Controls.Add(this.btn_encerrar_2);
             this.Controls.Add(this.pnl_barra);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Frm_Principal";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "JRS Controle";
             this.pnl_barra.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btn_encerrar)).EndInit();
-            this.panelContenedor.ResumeLayout(false);
-            this.panelContenedor.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptb_logo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnsalir)).EndInit();
-            this.MenuVertical.ResumeLayout(false);
+            this.btn_encerrar_2.ResumeLayout(false);
+            this.btn_encerrar_2.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_clientes)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -435,29 +309,21 @@ namespace JRS_Controle
 
         private System.Windows.Forms.Panel pnl_barra;
         private System.Windows.Forms.PictureBox btn_encerrar;
-        private System.Windows.Forms.Panel panelContenedor;
+        private System.Windows.Forms.Panel pnl_principal;
         private System.Windows.Forms.PictureBox ptb_logo;
         private System.Windows.Forms.Button btn_principal;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btn_novo;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btn_atualizar;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btn_excluir;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.PictureBox btnsalir;
-        private System.Windows.Forms.Panel MenuVertical;
+        private System.Windows.Forms.Panel btn_encerrar_2;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label lbl_quantidade;
-        private System.Windows.Forms.Label lbl_titulo;
-        private Guna.UI2.WinForms.Guna2DataGridView dgv_clientes;
-        private System.Windows.Forms.DataGridViewTextBoxColumn N_pedido;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Descricao;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Valor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Status;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Data_Entrada;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Data_Saida;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
     }
 }
