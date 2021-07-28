@@ -20,11 +20,13 @@ namespace JRS_Controle.Formularios
             cmb_status.Items.Clear();
 
             cmb_status.Items.Add("Em andamento");
+            cmb_status.Items.Add("Aguardando material");
+            cmb_status.Items.Add("Pendente pagamento");
             cmb_status.Items.Add("Encerrado");
             cmb_status.SelectedItem = "Em andamento";
 
             msk_busca.Focus();
-        }       
+        }
         private void btn_salvar_Click(object sender, EventArgs e)
         {
             if (msk_busca.Text == "")
@@ -93,6 +95,32 @@ namespace JRS_Controle.Formularios
             catch (Exception ex)
             {
                 MessageBox.Show($"Error: {ex.Message}", "Mensagem de Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btn_excluir_Click(object sender, EventArgs e)
+        {
+            if (msk_busca.Text == "")
+            {
+                MessageBox.Show($"Erro: Utilize o campo de pesquisa!", "Mensagem de Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                msk_busca.Focus();
+            }
+            else
+            {
+                try
+                {
+                    Clientes cliente = new Clientes(msk_busca.Text);
+
+                    if (cliente.Excluir())
+                    {
+                        msk_busca.Text = "";
+                        limpacampos();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error: {ex.Message}", "Mensagem de Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
     }

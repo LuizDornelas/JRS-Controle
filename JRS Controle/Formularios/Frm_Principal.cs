@@ -9,14 +9,14 @@ namespace JRS_Controle
 {
     public partial class Frm_Principal : Form
     {
-        string nome;
+        string nome;        
         public Frm_Principal(string name)
         {
-            InitializeComponent();
+            InitializeComponent();            
 
             nome = name;
 
-            AbrirForm(new Frm_Dashboard(nome));
+            AbrirForm(new Frm_Dashboard(nome));            
         }
 
         private void btn_encerrar_Click(object sender, EventArgs e)
@@ -70,6 +70,6 @@ namespace JRS_Controle
         private void btn_excluir_Click(object sender, EventArgs e)
         {
 
-        }
+        }        
     }
 }

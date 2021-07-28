@@ -6,7 +6,7 @@ namespace JRS_Controle.Classes
     {
         public NpgsqlConnection getConexao()
         {
-            NpgsqlConnection pgsqlConnection = new NpgsqlConnection("Server=127.0.0.1;Port=5432;User Id=postgres;Password=postgres;Database=DadosJRS;");
+            NpgsqlConnection pgsqlConnection = new NpgsqlConnection("Server=34.95.196.148;Port=5432;User Id=postgres;Password=Jrs@1900;Database=DadosJRS;");
 
             return pgsqlConnection;
         }

@@ -20,6 +20,8 @@ namespace JRS_Controle.Formularios
             cmb_status.Items.Clear();
 
             cmb_status.Items.Add("Em andamento");
+            cmb_status.Items.Add("Aguardando material");
+            cmb_status.Items.Add("Pendente pagamento");
             cmb_status.Items.Add("Encerrado");
             cmb_status.SelectedItem = "Em andamento";
         }      

@@ -7,18 +7,57 @@ namespace JRS_Controle.Formularios
 {
     public partial class Frm_Dashboard : Form
     {
+        int qnt;
         public Frm_Dashboard(string name)
         {
             InitializeComponent();
 
+            pendente();
+
             lbl_titulo.Text = $"Bem vindo, {name}!";
 
             preenchedgv();
+
+            if (qnt > 0)
+            {
+                pcb_gif.Visible = true;
+            }
+            else
+            {
+                pcb_gif.Visible = false;
+            }
+
+            lbl_quantidade.Text = $"Pendente pagamento: {qnt}";
         }
 
         private void btn_refresh_Click(object sender, EventArgs e)
         {
             preenchedgv();
+        }
+        public void pendente()
+        {
+            NpgsqlConnection pgsqlConnection = null;
+            try
+            {
+                ConexaoDB objconexao = new ConexaoDB();
+
+                pgsqlConnection = objconexao.getConexao();
+                pgsqlConnection.Open();
+
+                string querry = "select count(status) from clientes where status = 'Pendente pagamento';";
+
+                NpgsqlCommand cmd = new NpgsqlCommand(querry, pgsqlConnection);
+
+                NpgsqlDataReader qr = cmd.ExecuteReader();
+
+                qr.Read();
+
+                qnt = Convert.ToInt32(qr["count"].ToString());
+            }
+            finally
+            {
+                pgsqlConnection.Close();
+            }
         }
         private void preenchedgv()
         {

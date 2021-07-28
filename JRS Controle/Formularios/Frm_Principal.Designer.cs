@@ -40,20 +40,19 @@ namespace JRS_Controle
             this.panel2 = new System.Windows.Forms.Panel();
             this.btn_atualizar = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.btn_excluir = new System.Windows.Forms.Button();
+            this.btn_usuario = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.btnsalir = new System.Windows.Forms.PictureBox();
             this.btn_encerrar_2 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.btn_atualiza_usuario = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.lbl_quantidade = new System.Windows.Forms.Label();
             this.pnl_barra.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_encerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptb_logo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnsalir)).BeginInit();
             this.btn_encerrar_2.SuspendLayout();
-            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnl_barra
@@ -166,7 +165,7 @@ namespace JRS_Controle
             this.btn_atualizar.Name = "btn_atualizar";
             this.btn_atualizar.Size = new System.Drawing.Size(217, 32);
             this.btn_atualizar.TabIndex = 5;
-            this.btn_atualizar.Text = "Atualizar";
+            this.btn_atualizar.Text = "Atualizar/ Excluir";
             this.btn_atualizar.UseVisualStyleBackColor = false;
             this.btn_atualizar.Click += new System.EventHandler(this.btn_atualizar_Click);
             // 
@@ -178,23 +177,23 @@ namespace JRS_Controle
             this.panel3.Size = new System.Drawing.Size(5, 32);
             this.panel3.TabIndex = 6;
             // 
-            // btn_excluir
+            // btn_usuario
             // 
-            this.btn_excluir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            this.btn_excluir.FlatAppearance.BorderSize = 0;
-            this.btn_excluir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.btn_excluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_excluir.Font = new System.Drawing.Font("Century Gothic", 11.25F);
-            this.btn_excluir.ForeColor = System.Drawing.Color.White;
-            this.btn_excluir.Image = ((System.Drawing.Image)(resources.GetObject("btn_excluir.Image")));
-            this.btn_excluir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_excluir.Location = new System.Drawing.Point(3, 248);
-            this.btn_excluir.Name = "btn_excluir";
-            this.btn_excluir.Size = new System.Drawing.Size(217, 32);
-            this.btn_excluir.TabIndex = 7;
-            this.btn_excluir.Text = "Excluir";
-            this.btn_excluir.UseVisualStyleBackColor = false;
-            this.btn_excluir.Click += new System.EventHandler(this.btn_excluir_Click);
+            this.btn_usuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.btn_usuario.FlatAppearance.BorderSize = 0;
+            this.btn_usuario.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.btn_usuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_usuario.Font = new System.Drawing.Font("Century Gothic", 11.25F);
+            this.btn_usuario.ForeColor = System.Drawing.Color.White;
+            this.btn_usuario.Image = ((System.Drawing.Image)(resources.GetObject("btn_usuario.Image")));
+            this.btn_usuario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_usuario.Location = new System.Drawing.Point(3, 248);
+            this.btn_usuario.Name = "btn_usuario";
+            this.btn_usuario.Size = new System.Drawing.Size(217, 32);
+            this.btn_usuario.TabIndex = 7;
+            this.btn_usuario.Text = "Novo usuário";
+            this.btn_usuario.UseVisualStyleBackColor = false;
+            this.btn_usuario.Click += new System.EventHandler(this.btn_excluir_Click);
             // 
             // panel4
             // 
@@ -219,12 +218,13 @@ namespace JRS_Controle
             // btn_encerrar_2
             // 
             this.btn_encerrar_2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.btn_encerrar_2.Controls.Add(this.panel6);
+            this.btn_encerrar_2.Controls.Add(this.btn_atualiza_usuario);
             this.btn_encerrar_2.Controls.Add(this.label2);
             this.btn_encerrar_2.Controls.Add(this.label1);
-            this.btn_encerrar_2.Controls.Add(this.panel5);
             this.btn_encerrar_2.Controls.Add(this.btnsalir);
             this.btn_encerrar_2.Controls.Add(this.panel4);
-            this.btn_encerrar_2.Controls.Add(this.btn_excluir);
+            this.btn_encerrar_2.Controls.Add(this.btn_usuario);
             this.btn_encerrar_2.Controls.Add(this.panel3);
             this.btn_encerrar_2.Controls.Add(this.btn_atualizar);
             this.btn_encerrar_2.Controls.Add(this.panel2);
@@ -237,6 +237,31 @@ namespace JRS_Controle
             this.btn_encerrar_2.Name = "btn_encerrar_2";
             this.btn_encerrar_2.Size = new System.Drawing.Size(220, 612);
             this.btn_encerrar_2.TabIndex = 1;
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.panel6.Location = new System.Drawing.Point(0, 290);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(5, 32);
+            this.panel6.TabIndex = 9;
+            // 
+            // btn_atualiza_usuario
+            // 
+            this.btn_atualiza_usuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.btn_atualiza_usuario.FlatAppearance.BorderSize = 0;
+            this.btn_atualiza_usuario.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.btn_atualiza_usuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_atualiza_usuario.Font = new System.Drawing.Font("Century Gothic", 11.25F);
+            this.btn_atualiza_usuario.ForeColor = System.Drawing.Color.White;
+            this.btn_atualiza_usuario.Image = ((System.Drawing.Image)(resources.GetObject("btn_atualiza_usuario.Image")));
+            this.btn_atualiza_usuario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_atualiza_usuario.Location = new System.Drawing.Point(2, 290);
+            this.btn_atualiza_usuario.Name = "btn_atualiza_usuario";
+            this.btn_atualiza_usuario.Size = new System.Drawing.Size(217, 32);
+            this.btn_atualiza_usuario.TabIndex = 19;
+            this.btn_atualiza_usuario.Text = "Atualizar usuário";
+            this.btn_atualiza_usuario.UseVisualStyleBackColor = false;
             // 
             // label2
             // 
@@ -261,25 +286,6 @@ namespace JRS_Controle
             this.label1.TabIndex = 17;
             this.label1.Text = "Desenvolvido por:";
             // 
-            // panel5
-            // 
-            this.panel5.Controls.Add(this.lbl_quantidade);
-            this.panel5.Location = new System.Drawing.Point(3, 408);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(217, 32);
-            this.panel5.TabIndex = 0;
-            // 
-            // lbl_quantidade
-            // 
-            this.lbl_quantidade.AutoSize = true;
-            this.lbl_quantidade.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.lbl_quantidade.ForeColor = System.Drawing.Color.White;
-            this.lbl_quantidade.Location = new System.Drawing.Point(9, 8);
-            this.lbl_quantidade.Name = "lbl_quantidade";
-            this.lbl_quantidade.Size = new System.Drawing.Size(157, 17);
-            this.lbl_quantidade.TabIndex = 0;
-            this.lbl_quantidade.Text = "Pendente pagamento:";
-            // 
             // Frm_Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -299,8 +305,6 @@ namespace JRS_Controle
             ((System.ComponentModel.ISupportInitialize)(this.btnsalir)).EndInit();
             this.btn_encerrar_2.ResumeLayout(false);
             this.btn_encerrar_2.PerformLayout();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -317,13 +321,13 @@ namespace JRS_Controle
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btn_atualizar;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Button btn_excluir;
+        private System.Windows.Forms.Button btn_usuario;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.PictureBox btnsalir;
         private System.Windows.Forms.Panel btn_encerrar_2;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Label lbl_quantidade;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Button btn_atualiza_usuario;
     }
 }

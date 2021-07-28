@@ -283,5 +283,64 @@ namespace JRS_Controle.Classes
                 pgsqlConnection.Close();
             }
         }
+        public bool Excluir()
+        {
+            NpgsqlConnection pgsqlConnection = null;
+            try
+            {
+                ConexaoDB objconexao = new ConexaoDB();
+
+                pgsqlConnection = objconexao.getConexao();
+                pgsqlConnection.Open();
+
+                string querry = "SELECT count (pedido) FROM clientes where pedido = '" + this.busca + "';";
+
+                NpgsqlCommand cmd = new NpgsqlCommand(querry, pgsqlConnection);
+
+                NpgsqlDataReader qr = cmd.ExecuteReader();
+
+                qr.Read();
+
+                string criterio = qr["count"].ToString();
+
+                qr.Close();
+
+                if (criterio == "1")
+                {
+                    DialogResult excluir = new DialogResult();
+
+                    excluir = MessageBox.Show($"Tem certeza que deseja excluir o pedido nº{this.busca}?", "Mensagem de Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+
+                    if (excluir == DialogResult.Yes)
+                    {
+                        querry = "DELETE FROM public.clientes WHERE pedido ='" + this.busca + "';";
+
+                        cmd = new NpgsqlCommand(querry, pgsqlConnection);
+
+                        qr = cmd.ExecuteReader();
+
+                        MessageBox.Show($"O pedido foi excluído!", "Mensagem de Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        return true;
+                    }
+                    else
+                    {
+                        MessageBox.Show($"O pedido não foi excluído", "Mensagem de Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        return false;
+                    }                    
+                }
+                else
+                {
+                    MessageBox.Show($"Erro: Esse pedido não existe!", "Mensagem de Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                    return false;
+                }
+            }
+            finally
+            {
+                pgsqlConnection.Close();
+            }
+        }
     }
 }

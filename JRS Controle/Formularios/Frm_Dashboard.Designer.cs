@@ -29,10 +29,10 @@ namespace JRS_Controle.Formularios
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Dashboard));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnl_principal = new System.Windows.Forms.Panel();
             this.btn_refresh = new System.Windows.Forms.Button();
             this.dgv_clientes = new Guna.UI2.WinForms.Guna2DataGridView();
@@ -44,13 +44,20 @@ namespace JRS_Controle.Formularios
             this.Data_Entrada = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Data_Saida = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lbl_titulo = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.lbl_quantidade = new System.Windows.Forms.Label();
+            this.pcb_gif = new System.Windows.Forms.PictureBox();
             this.pnl_principal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_clientes)).BeginInit();
+            this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pcb_gif)).BeginInit();
             this.SuspendLayout();
             // 
             // pnl_principal
             // 
             this.pnl_principal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            this.pnl_principal.Controls.Add(this.pcb_gif);
+            this.pnl_principal.Controls.Add(this.panel5);
             this.pnl_principal.Controls.Add(this.btn_refresh);
             this.pnl_principal.Controls.Add(this.dgv_clientes);
             this.pnl_principal.Controls.Add(this.lbl_titulo);
@@ -71,7 +78,7 @@ namespace JRS_Controle.Formularios
             this.btn_refresh.ForeColor = System.Drawing.Color.White;
             this.btn_refresh.Image = ((System.Drawing.Image)(resources.GetObject("btn_refresh.Image")));
             this.btn_refresh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_refresh.Location = new System.Drawing.Point(1039, 92);
+            this.btn_refresh.Location = new System.Drawing.Point(1039, 76);
             this.btn_refresh.Name = "btn_refresh";
             this.btn_refresh.Size = new System.Drawing.Size(38, 40);
             this.btn_refresh.TabIndex = 6;
@@ -80,21 +87,21 @@ namespace JRS_Controle.Formularios
             // 
             // dgv_clientes
             // 
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            this.dgv_clientes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.dgv_clientes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_clientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_clientes.BackgroundColor = System.Drawing.Color.White;
             this.dgv_clientes.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgv_clientes.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgv_clientes.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_clientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_clientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_clientes.ColumnHeadersHeight = 21;
             this.dgv_clientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.N_pedido,
@@ -104,17 +111,17 @@ namespace JRS_Controle.Formularios
             this.Status,
             this.Data_Entrada,
             this.Data_Saida});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_clientes.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_clientes.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgv_clientes.EnableHeadersVisualStyles = false;
             this.dgv_clientes.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgv_clientes.Location = new System.Drawing.Point(33, 92);
+            this.dgv_clientes.Location = new System.Drawing.Point(33, 76);
             this.dgv_clientes.Name = "dgv_clientes";
             this.dgv_clientes.ReadOnly = true;
             this.dgv_clientes.RowHeadersVisible = false;
@@ -198,6 +205,37 @@ namespace JRS_Controle.Formularios
             this.lbl_titulo.TabIndex = 1;
             this.lbl_titulo.Text = "Bem vindo";
             // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.lbl_quantidade);
+            this.panel5.Location = new System.Drawing.Point(75, 578);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(256, 32);
+            this.panel5.TabIndex = 7;
+            // 
+            // lbl_quantidade
+            // 
+            this.lbl_quantidade.AutoSize = true;
+            this.lbl_quantidade.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_quantidade.ForeColor = System.Drawing.Color.White;
+            this.lbl_quantidade.Location = new System.Drawing.Point(3, 7);
+            this.lbl_quantidade.Name = "lbl_quantidade";
+            this.lbl_quantidade.Size = new System.Drawing.Size(223, 22);
+            this.lbl_quantidade.TabIndex = 0;
+            this.lbl_quantidade.Text = "Pendente pagamento:";
+            // 
+            // pcb_gif
+            // 
+            this.pcb_gif.BackColor = System.Drawing.Color.Transparent;
+            this.pcb_gif.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.pcb_gif.Image = ((System.Drawing.Image)(resources.GetObject("pcb_gif.Image")));
+            this.pcb_gif.Location = new System.Drawing.Point(33, 571);
+            this.pcb_gif.Name = "pcb_gif";
+            this.pcb_gif.Size = new System.Drawing.Size(39, 42);
+            this.pcb_gif.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pcb_gif.TabIndex = 21;
+            this.pcb_gif.TabStop = false;
+            // 
             // Frm_Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -211,6 +249,9 @@ namespace JRS_Controle.Formularios
             this.pnl_principal.ResumeLayout(false);
             this.pnl_principal.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_clientes)).EndInit();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pcb_gif)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -228,5 +269,8 @@ namespace JRS_Controle.Formularios
         private System.Windows.Forms.DataGridViewTextBoxColumn Data_Entrada;
         private System.Windows.Forms.DataGridViewTextBoxColumn Data_Saida;
         private System.Windows.Forms.Label lbl_titulo;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Label lbl_quantidade;
+        private System.Windows.Forms.PictureBox pcb_gif;
     }
 }

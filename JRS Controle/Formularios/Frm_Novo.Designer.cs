@@ -47,9 +47,9 @@ namespace JRS_Controle.Formularios
             // txt_nome
             // 
             this.txt_nome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.txt_nome.Location = new System.Drawing.Point(198, 32);
+            this.txt_nome.Location = new System.Drawing.Point(310, 32);
             this.txt_nome.Name = "txt_nome";
-            this.txt_nome.Size = new System.Drawing.Size(287, 26);
+            this.txt_nome.Size = new System.Drawing.Size(514, 26);
             this.txt_nome.TabIndex = 22;
             // 
             // txt_valor
@@ -67,7 +67,7 @@ namespace JRS_Controle.Formularios
             this.cmb_status.FormattingEnabled = true;
             this.cmb_status.Location = new System.Drawing.Point(16, 159);
             this.cmb_status.Name = "cmb_status";
-            this.cmb_status.Size = new System.Drawing.Size(134, 28);
+            this.cmb_status.Size = new System.Drawing.Size(161, 28);
             this.cmb_status.TabIndex = 19;
             // 
             // msk_pedido
@@ -84,9 +84,10 @@ namespace JRS_Controle.Formularios
             // lbl_descricao
             // 
             this.lbl_descricao.AutoSize = true;
+            this.lbl_descricao.BackColor = System.Drawing.Color.Transparent;
             this.lbl_descricao.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.lbl_descricao.ForeColor = System.Drawing.Color.White;
-            this.lbl_descricao.Location = new System.Drawing.Point(198, 71);
+            this.lbl_descricao.ForeColor = System.Drawing.Color.Black;
+            this.lbl_descricao.Location = new System.Drawing.Point(310, 71);
             this.lbl_descricao.Name = "lbl_descricao";
             this.lbl_descricao.Size = new System.Drawing.Size(91, 21);
             this.lbl_descricao.TabIndex = 17;
@@ -95,8 +96,9 @@ namespace JRS_Controle.Formularios
             // lbl_status
             // 
             this.lbl_status.AutoSize = true;
+            this.lbl_status.BackColor = System.Drawing.Color.Transparent;
             this.lbl_status.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.lbl_status.ForeColor = System.Drawing.Color.White;
+            this.lbl_status.ForeColor = System.Drawing.Color.Black;
             this.lbl_status.Location = new System.Drawing.Point(12, 136);
             this.lbl_status.Name = "lbl_status";
             this.lbl_status.Size = new System.Drawing.Size(63, 21);
@@ -106,8 +108,9 @@ namespace JRS_Controle.Formularios
             // lbl_valor
             // 
             this.lbl_valor.AutoSize = true;
+            this.lbl_valor.BackColor = System.Drawing.Color.Transparent;
             this.lbl_valor.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.lbl_valor.ForeColor = System.Drawing.Color.White;
+            this.lbl_valor.ForeColor = System.Drawing.Color.Black;
             this.lbl_valor.Location = new System.Drawing.Point(12, 71);
             this.lbl_valor.Name = "lbl_valor";
             this.lbl_valor.Size = new System.Drawing.Size(54, 21);
@@ -117,9 +120,10 @@ namespace JRS_Controle.Formularios
             // lbl_nome
             // 
             this.lbl_nome.AutoSize = true;
+            this.lbl_nome.BackColor = System.Drawing.Color.Transparent;
             this.lbl_nome.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.lbl_nome.ForeColor = System.Drawing.Color.White;
-            this.lbl_nome.Location = new System.Drawing.Point(198, 9);
+            this.lbl_nome.ForeColor = System.Drawing.Color.Black;
+            this.lbl_nome.Location = new System.Drawing.Point(310, 9);
             this.lbl_nome.Name = "lbl_nome";
             this.lbl_nome.Size = new System.Drawing.Size(61, 21);
             this.lbl_nome.TabIndex = 14;
@@ -128,8 +132,9 @@ namespace JRS_Controle.Formularios
             // lbl_pedido
             // 
             this.lbl_pedido.AutoSize = true;
+            this.lbl_pedido.BackColor = System.Drawing.Color.Transparent;
             this.lbl_pedido.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.lbl_pedido.ForeColor = System.Drawing.Color.White;
+            this.lbl_pedido.ForeColor = System.Drawing.Color.Black;
             this.lbl_pedido.Location = new System.Drawing.Point(12, 9);
             this.lbl_pedido.Name = "lbl_pedido";
             this.lbl_pedido.Size = new System.Drawing.Size(92, 21);
@@ -139,9 +144,9 @@ namespace JRS_Controle.Formularios
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Location = new System.Drawing.Point(16, 188);
+            this.panel1.Location = new System.Drawing.Point(16, 216);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(468, 2);
+            this.panel1.Size = new System.Drawing.Size(807, 2);
             this.panel1.TabIndex = 23;
             // 
             // btn_salvar
@@ -149,7 +154,7 @@ namespace JRS_Controle.Formularios
             this.btn_salvar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(120)))), ((int)(((byte)(187)))));
             this.btn_salvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold);
             this.btn_salvar.ForeColor = System.Drawing.Color.Snow;
-            this.btn_salvar.Location = new System.Drawing.Point(189, 231);
+            this.btn_salvar.Location = new System.Drawing.Point(339, 241);
             this.btn_salvar.Name = "btn_salvar";
             this.btn_salvar.Size = new System.Drawing.Size(129, 47);
             this.btn_salvar.TabIndex = 25;
@@ -159,9 +164,10 @@ namespace JRS_Controle.Formularios
             // 
             // rtb_descricao
             // 
-            this.rtb_descricao.Location = new System.Drawing.Point(198, 100);
+            this.rtb_descricao.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.rtb_descricao.Location = new System.Drawing.Point(310, 100);
             this.rtb_descricao.Name = "rtb_descricao";
-            this.rtb_descricao.Size = new System.Drawing.Size(287, 84);
+            this.rtb_descricao.Size = new System.Drawing.Size(514, 87);
             this.rtb_descricao.TabIndex = 27;
             this.rtb_descricao.Text = "";
             // 
@@ -170,7 +176,9 @@ namespace JRS_Controle.Formularios
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
-            this.ClientSize = new System.Drawing.Size(500, 290);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(839, 328);
             this.Controls.Add(this.rtb_descricao);
             this.Controls.Add(this.btn_salvar);
             this.Controls.Add(this.panel1);
