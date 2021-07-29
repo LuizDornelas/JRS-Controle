@@ -11,6 +11,7 @@ namespace JRS_Controle.Classes
         private string nome;
         private string descricao;
         private string valor;
+        private string pagamento;
         private string status;
         private DateTime data_entrada;
         private DateTime data_saida;
@@ -58,6 +59,17 @@ namespace JRS_Controle.Classes
                 this.valor = value;
             }
         }
+        public string Pagamento
+        {
+            get
+            {
+                return this.pagamento;
+            }
+            set
+            {
+                this.pagamento = value;
+            }
+        }
         public string Status
         {
             get
@@ -102,28 +114,25 @@ namespace JRS_Controle.Classes
                 this.busca = value;
             }
         }
-        public Clientes(string pedido, string nome, string descricao, string valor, string status, DateTime data_entrada)
+
+        public Clientes()
         {
-            this.pedido = pedido;
-            this.nome = nome;
-            this.descricao = descricao;
-            this.valor = valor;
-            this.status = status;
-            this.data_entrada = data_entrada;
         }
+
         public Clientes(string busca)
         {
             this.busca = busca;
         }
-        public Clientes(string busca, string pedido, string nome, string descricao, string valor, string status, DateTime data_entrada)
+        public Clientes(string busca, string pedido, string nome, string descricao, string valor, string pagamento, string status, DateTime data_entrada)
         {
             this.busca = busca;
             this.pedido = pedido;
             this.nome = nome;
             this.descricao = descricao;
-            this.valor = valor;
+            this.valor = valor;            
             this.status = status;
-            this.data_entrada = data_entrada;
+            this.pagamento = pagamento;
+            this.data_entrada = data_entrada;            
         }
 
         public bool Cadastro()
@@ -150,7 +159,7 @@ namespace JRS_Controle.Classes
 
                 if (criterio == "0")
                 {
-                    querry = "INSERT INTO public.clientes(pedido, nome, descricao, valor, status, entrada) VALUES ('" + this.pedido + "', '" + this.nome + "', '" + this.descricao + "', '" + this.valor + "', '" + this.status + "', '" + this.data_entrada + "');";
+                    querry = "INSERT INTO public.clientes(pedido, nome, descricao, valor, pagamento, status, entrada) VALUES ('" + this.pedido + "', '" + this.nome + "', '" + this.descricao + "', '" + this.valor + "', '" + this.pagamento + "', '" + this.status + "', '" + this.data_entrada.ToString("yyyy-MM-dd HH:mm:ss") + "');";
 
                     cmd = new NpgsqlCommand(querry, pgsqlConnection);
 
@@ -212,6 +221,7 @@ namespace JRS_Controle.Classes
                     this.descricao = qr["descricao"].ToString();
                     this.valor = qr["valor"].ToString();
                     this.status = qr["status"].ToString();
+                    this.pagamento = qr["pagamento"].ToString();
 
                     qr.Close();
 
@@ -253,11 +263,11 @@ namespace JRS_Controle.Classes
                 {
                     if (this.status == "Encerrado")
                     {
-                        querry = "UPDATE public.clientes SET pedido='" + this.pedido + "', nome='" + this.nome + "', descricao='" + this.descricao + "', valor='" + this.valor + "', status='" + this.status + "', saida='" + DateTime.Now + "' WHERE pedido = '" + this.busca + "';";
+                        querry = "UPDATE public.clientes SET pedido='" + this.pedido + "', nome='" + this.nome + "', descricao='" + this.descricao + "', valor='" + this.valor + "', pagamento='" + this.pagamento + "', status='" + this.status + "', saida='" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "' WHERE pedido = '" + this.busca + "';";
                     }
                     else
                     {
-                        querry = "UPDATE public.clientes SET pedido='" + this.pedido + "', nome='" + this.nome + "', descricao='" + this.descricao + "', valor='" + this.valor + "', status='" + this.status + "' WHERE pedido = '" + this.busca + "';";
+                        querry = "UPDATE public.clientes SET pedido='" + this.pedido + "', nome='" + this.nome + "', descricao='" + this.descricao + "', valor='" + this.valor + "', pagamento='" + this.pagamento + "', status='" + this.status + "' WHERE pedido = '" + this.busca + "';";
                     }
                     cmd = new NpgsqlCommand(querry, pgsqlConnection);
 

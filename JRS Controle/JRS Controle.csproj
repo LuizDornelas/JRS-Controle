@@ -187,11 +187,17 @@
     <Compile Include="Classes\Clientes.cs" />
     <Compile Include="Classes\ConexaoDB.cs" />
     <Compile Include="Classes\Login.cs" />
-    <Compile Include="Formularios\Frm_Atualizar.cs">
+    <Compile Include="Formularios\Frm_AtualizarPedido.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\Frm_Atualizar.Designer.cs">
-      <DependentUpon>Frm_Atualizar.cs</DependentUpon>
+    <Compile Include="Formularios\Frm_AtualizarPedido.Designer.cs">
+      <DependentUpon>Frm_AtualizarPedido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Frm_AtualizaUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Frm_AtualizaUsuario.Designer.cs">
+      <DependentUpon>Frm_AtualizaUsuario.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Frm_Dashboard.cs">
       <SubType>Form</SubType>
@@ -205,11 +211,17 @@
     <Compile Include="Formularios\Frm_Login.Designer.cs">
       <DependentUpon>Frm_Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Frm_Novo.cs">
+    <Compile Include="Formularios\Frm_NovoPedido.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\Frm_Novo.Designer.cs">
-      <DependentUpon>Frm_Novo.cs</DependentUpon>
+    <Compile Include="Formularios\Frm_NovoPedido.Designer.cs">
+      <DependentUpon>Frm_NovoPedido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Frm_NovoUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Frm_NovoUsuario.Designer.cs">
+      <DependentUpon>Frm_NovoUsuario.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Frm_Principal.cs">
       <SubType>Form</SubType>
@@ -219,8 +231,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Formularios\Frm_Atualizar.resx">
-      <DependentUpon>Frm_Atualizar.cs</DependentUpon>
+    <EmbeddedResource Include="Formularios\Frm_AtualizarPedido.resx">
+      <DependentUpon>Frm_AtualizarPedido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Frm_AtualizaUsuario.resx">
+      <DependentUpon>Frm_AtualizaUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Frm_Dashboard.resx">
       <DependentUpon>Frm_Dashboard.cs</DependentUpon>
@@ -228,8 +243,11 @@
     <EmbeddedResource Include="Formularios\Frm_Login.resx">
       <DependentUpon>Frm_Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Frm_Novo.resx">
-      <DependentUpon>Frm_Novo.cs</DependentUpon>
+    <EmbeddedResource Include="Formularios\Frm_NovoPedido.resx">
+      <DependentUpon>Frm_NovoPedido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Frm_NovoUsuario.resx">
+      <DependentUpon>Frm_NovoUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Frm_Principal.resx">
       <DependentUpon>Frm_Principal.cs</DependentUpon>

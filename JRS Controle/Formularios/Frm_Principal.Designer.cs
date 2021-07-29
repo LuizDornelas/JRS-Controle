@@ -139,7 +139,7 @@ namespace JRS_Controle
             this.btn_novo.Name = "btn_novo";
             this.btn_novo.Size = new System.Drawing.Size(217, 32);
             this.btn_novo.TabIndex = 3;
-            this.btn_novo.Text = "Novo";
+            this.btn_novo.Text = "Novo pedido";
             this.btn_novo.UseVisualStyleBackColor = false;
             this.btn_novo.Click += new System.EventHandler(this.btn_novo_Click);
             // 
@@ -260,8 +260,9 @@ namespace JRS_Controle
             this.btn_atualiza_usuario.Name = "btn_atualiza_usuario";
             this.btn_atualiza_usuario.Size = new System.Drawing.Size(217, 32);
             this.btn_atualiza_usuario.TabIndex = 19;
-            this.btn_atualiza_usuario.Text = "Atualizar usuário";
+            this.btn_atualiza_usuario.Text = "Reset Senha";
             this.btn_atualiza_usuario.UseVisualStyleBackColor = false;
+            this.btn_atualiza_usuario.Click += new System.EventHandler(this.btn_atualiza_usuario_Click);
             // 
             // label2
             // 

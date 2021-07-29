@@ -54,7 +54,7 @@ namespace JRS_Controle
 
         private void btn_novo_Click(object sender, EventArgs e)
         {
-            AbrirForm(new Frm_Novo());
+            AbrirForm(new Frm_NovoPedido());
         }
 
         private void btn_principal_Click(object sender, EventArgs e)
@@ -64,12 +64,17 @@ namespace JRS_Controle
 
         private void btn_atualizar_Click(object sender, EventArgs e)
         {
-            AbrirForm(new Frm_Atualizar());
+            AbrirForm(new Frm_AtualizarPedido());
         }
 
         private void btn_excluir_Click(object sender, EventArgs e)
         {
+            AbrirForm(new Frm_NovoUsuario());
+        }
 
-        }        
+        private void btn_atualiza_usuario_Click(object sender, EventArgs e)
+        {
+            AbrirForm(new Frm_AtualizaUsuario());
+        }
     }
 }

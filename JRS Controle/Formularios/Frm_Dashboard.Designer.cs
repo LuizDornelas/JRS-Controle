@@ -29,28 +29,29 @@ namespace JRS_Controle.Formularios
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Dashboard));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Dashboard));
             this.pnl_principal = new System.Windows.Forms.Panel();
+            this.pcb_gif = new System.Windows.Forms.PictureBox();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.lbl_quantidade = new System.Windows.Forms.Label();
             this.btn_refresh = new System.Windows.Forms.Button();
             this.dgv_clientes = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.lbl_titulo = new System.Windows.Forms.Label();
             this.N_pedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Pagamento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Data_Entrada = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Data_Saida = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lbl_titulo = new System.Windows.Forms.Label();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.lbl_quantidade = new System.Windows.Forms.Label();
-            this.pcb_gif = new System.Windows.Forms.PictureBox();
             this.pnl_principal.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_clientes)).BeginInit();
-            this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcb_gif)).BeginInit();
+            this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_clientes)).BeginInit();
             this.SuspendLayout();
             // 
             // pnl_principal
@@ -66,6 +67,37 @@ namespace JRS_Controle.Formularios
             this.pnl_principal.Name = "pnl_principal";
             this.pnl_principal.Size = new System.Drawing.Size(1097, 616);
             this.pnl_principal.TabIndex = 3;
+            // 
+            // pcb_gif
+            // 
+            this.pcb_gif.BackColor = System.Drawing.Color.Transparent;
+            this.pcb_gif.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.pcb_gif.Image = ((System.Drawing.Image)(resources.GetObject("pcb_gif.Image")));
+            this.pcb_gif.Location = new System.Drawing.Point(33, 571);
+            this.pcb_gif.Name = "pcb_gif";
+            this.pcb_gif.Size = new System.Drawing.Size(39, 42);
+            this.pcb_gif.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pcb_gif.TabIndex = 21;
+            this.pcb_gif.TabStop = false;
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.lbl_quantidade);
+            this.panel5.Location = new System.Drawing.Point(75, 578);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(256, 32);
+            this.panel5.TabIndex = 7;
+            // 
+            // lbl_quantidade
+            // 
+            this.lbl_quantidade.AutoSize = true;
+            this.lbl_quantidade.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_quantidade.ForeColor = System.Drawing.Color.White;
+            this.lbl_quantidade.Location = new System.Drawing.Point(3, 7);
+            this.lbl_quantidade.Name = "lbl_quantidade";
+            this.lbl_quantidade.Size = new System.Drawing.Size(223, 22);
+            this.lbl_quantidade.TabIndex = 0;
+            this.lbl_quantidade.Text = "Pendente pagamento:";
             // 
             // btn_refresh
             // 
@@ -90,6 +122,7 @@ namespace JRS_Controle.Formularios
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             this.dgv_clientes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_clientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv_clientes.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgv_clientes.BackgroundColor = System.Drawing.Color.White;
             this.dgv_clientes.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgv_clientes.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
@@ -108,6 +141,7 @@ namespace JRS_Controle.Formularios
             this.Nome,
             this.Descricao,
             this.Valor,
+            this.Pagamento,
             this.Status,
             this.Data_Entrada,
             this.Data_Saida});
@@ -152,6 +186,17 @@ namespace JRS_Controle.Formularios
             this.dgv_clientes.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgv_clientes.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             // 
+            // lbl_titulo
+            // 
+            this.lbl_titulo.AutoSize = true;
+            this.lbl_titulo.Font = new System.Drawing.Font("Century Gothic", 18F);
+            this.lbl_titulo.ForeColor = System.Drawing.Color.White;
+            this.lbl_titulo.Location = new System.Drawing.Point(28, 32);
+            this.lbl_titulo.Name = "lbl_titulo";
+            this.lbl_titulo.Size = new System.Drawing.Size(142, 30);
+            this.lbl_titulo.TabIndex = 1;
+            this.lbl_titulo.Text = "Bem vindo";
+            // 
             // N_pedido
             // 
             this.N_pedido.HeaderText = "Nº pedido";
@@ -176,6 +221,12 @@ namespace JRS_Controle.Formularios
             this.Valor.Name = "Valor";
             this.Valor.ReadOnly = true;
             // 
+            // Pagamento
+            // 
+            this.Pagamento.HeaderText = "Pagamento";
+            this.Pagamento.Name = "Pagamento";
+            this.Pagamento.ReadOnly = true;
+            // 
             // Status
             // 
             this.Status.HeaderText = "Status";
@@ -194,48 +245,6 @@ namespace JRS_Controle.Formularios
             this.Data_Saida.Name = "Data_Saida";
             this.Data_Saida.ReadOnly = true;
             // 
-            // lbl_titulo
-            // 
-            this.lbl_titulo.AutoSize = true;
-            this.lbl_titulo.Font = new System.Drawing.Font("Century Gothic", 18F);
-            this.lbl_titulo.ForeColor = System.Drawing.Color.White;
-            this.lbl_titulo.Location = new System.Drawing.Point(28, 32);
-            this.lbl_titulo.Name = "lbl_titulo";
-            this.lbl_titulo.Size = new System.Drawing.Size(142, 30);
-            this.lbl_titulo.TabIndex = 1;
-            this.lbl_titulo.Text = "Bem vindo";
-            // 
-            // panel5
-            // 
-            this.panel5.Controls.Add(this.lbl_quantidade);
-            this.panel5.Location = new System.Drawing.Point(75, 578);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(256, 32);
-            this.panel5.TabIndex = 7;
-            // 
-            // lbl_quantidade
-            // 
-            this.lbl_quantidade.AutoSize = true;
-            this.lbl_quantidade.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_quantidade.ForeColor = System.Drawing.Color.White;
-            this.lbl_quantidade.Location = new System.Drawing.Point(3, 7);
-            this.lbl_quantidade.Name = "lbl_quantidade";
-            this.lbl_quantidade.Size = new System.Drawing.Size(223, 22);
-            this.lbl_quantidade.TabIndex = 0;
-            this.lbl_quantidade.Text = "Pendente pagamento:";
-            // 
-            // pcb_gif
-            // 
-            this.pcb_gif.BackColor = System.Drawing.Color.Transparent;
-            this.pcb_gif.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.pcb_gif.Image = ((System.Drawing.Image)(resources.GetObject("pcb_gif.Image")));
-            this.pcb_gif.Location = new System.Drawing.Point(33, 571);
-            this.pcb_gif.Name = "pcb_gif";
-            this.pcb_gif.Size = new System.Drawing.Size(39, 42);
-            this.pcb_gif.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pcb_gif.TabIndex = 21;
-            this.pcb_gif.TabStop = false;
-            // 
             // Frm_Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -248,10 +257,10 @@ namespace JRS_Controle.Formularios
             this.Text = "Frm_Dashboard";
             this.pnl_principal.ResumeLayout(false);
             this.pnl_principal.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_clientes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcb_gif)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pcb_gif)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_clientes)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -261,16 +270,17 @@ namespace JRS_Controle.Formularios
         private System.Windows.Forms.Panel pnl_principal;
         private System.Windows.Forms.Button btn_refresh;
         private Guna.UI2.WinForms.Guna2DataGridView dgv_clientes;
-        private System.Windows.Forms.DataGridViewTextBoxColumn N_pedido;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Descricao;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Valor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Status;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Data_Entrada;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Data_Saida;
         private System.Windows.Forms.Label lbl_titulo;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label lbl_quantidade;
         private System.Windows.Forms.PictureBox pcb_gif;
+        private System.Windows.Forms.DataGridViewTextBoxColumn N_pedido;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nome;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Descricao;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Valor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Pagamento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Status;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Data_Entrada;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Data_Saida;
     }
 }

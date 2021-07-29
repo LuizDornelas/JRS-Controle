@@ -10,9 +10,7 @@ namespace JRS_Controle.Formularios
         int qnt;
         public Frm_Dashboard(string name)
         {
-            InitializeComponent();
-
-            pendente();
+            InitializeComponent();            
 
             lbl_titulo.Text = $"Bem vindo, {name}!";
 
@@ -33,36 +31,9 @@ namespace JRS_Controle.Formularios
         private void btn_refresh_Click(object sender, EventArgs e)
         {
             preenchedgv();
-        }
-        public void pendente()
-        {
-            NpgsqlConnection pgsqlConnection = null;
-            try
-            {
-                ConexaoDB objconexao = new ConexaoDB();
-
-                pgsqlConnection = objconexao.getConexao();
-                pgsqlConnection.Open();
-
-                string querry = "select count(status) from clientes where status = 'Pendente pagamento';";
-
-                NpgsqlCommand cmd = new NpgsqlCommand(querry, pgsqlConnection);
-
-                NpgsqlDataReader qr = cmd.ExecuteReader();
-
-                qr.Read();
-
-                qnt = Convert.ToInt32(qr["count"].ToString());
-            }
-            finally
-            {
-                pgsqlConnection.Close();
-            }
-        }
+        }        
         private void preenchedgv()
-        {
-            double total = 0;
-            int count = 0;
+        {            
             dgv_clientes.Rows.Clear();
             dgv_clientes.DataSource = null;
             NpgsqlConnection pgsqlConnection = null;
@@ -85,13 +56,13 @@ namespace JRS_Controle.Formularios
                     string nome = dgv["nome"].ToString();
                     string descricao = dgv["descricao"].ToString();
                     double valor = Convert.ToDouble(dgv["valor"].ToString());
+                    string pagamento = dgv["pagamento"].ToString();
                     string status = dgv["status"].ToString();
                     DateTime data_entrada = Convert.ToDateTime(dgv["entrada"].ToString());
 
-                    if (status == "Em andamento")
-                    {
-                        total += valor;
-                        count += 1;
+                    if (status == "Pendente pagamento" || status == "1ª Parcela Paga")
+                    {                        
+                        qnt += 1;
                     }
 
                     if (dgv["saida"].ToString() != "")
@@ -104,6 +75,7 @@ namespace JRS_Controle.Formularios
                                                     nome,
                                                     descricao,
                                                     valor.ToString("F"),
+                                                    pagamento,
                                                     status,
                                                     data_entrada.ToString("dd/MM/yyyy HH:mm:ss"),
                                                     data_saida.ToString("dd/MM/yyyy HH:mm:ss")
@@ -119,6 +91,7 @@ namespace JRS_Controle.Formularios
                                                     nome,
                                                     descricao,
                                                     valor.ToString("F"),
+                                                    pagamento,
                                                     status,
                                                     data_entrada.ToString("dd/MM/yyyy HH:mm:ss")
         };
