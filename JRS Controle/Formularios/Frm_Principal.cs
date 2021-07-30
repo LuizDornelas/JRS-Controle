@@ -9,14 +9,14 @@ namespace JRS_Controle
 {
     public partial class Frm_Principal : Form
     {
-        string nome;        
+        string nome;
         public Frm_Principal(string name)
         {
-            InitializeComponent();            
+            InitializeComponent();
 
             nome = name;
 
-            AbrirForm(new Frm_Dashboard(nome));            
+            AbrirForm(new Frm_Graficos());
         }
 
         private void btn_encerrar_Click(object sender, EventArgs e)
@@ -37,7 +37,7 @@ namespace JRS_Controle
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
-        }        
+        }
         private void AbrirForm(object form)
         {
             if (this.pnl_principal.Controls.Count > 0)
@@ -75,6 +75,30 @@ namespace JRS_Controle
         private void btn_atualiza_usuario_Click(object sender, EventArgs e)
         {
             AbrirForm(new Frm_AtualizaUsuario());
+        }
+
+        private void ptb_logo_Click(object sender, EventArgs e)
+        {
+            AbrirForm(new Frm_Graficos());
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }     
+
+        private void btn_maximizar_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
+            btn_maximizar.Visible = false;
+            btn_restaurar.Visible = true;
+        }
+
+        private void btn_restaurar_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Normal;
+            btn_maximizar.Visible = true;
+            btn_restaurar.Visible = false;
         }
     }
 }
