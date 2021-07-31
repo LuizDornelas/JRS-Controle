@@ -190,6 +190,7 @@ namespace JRS_Controle.Formularios
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             this.dgv_login.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_login.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv_login.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgv_login.BackgroundColor = System.Drawing.Color.White;
             this.dgv_login.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgv_login.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;

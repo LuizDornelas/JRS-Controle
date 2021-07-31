@@ -44,33 +44,44 @@ namespace JRS_Controle.Formularios
                 pgsqlConnection = objconexao.getConexao();
                 pgsqlConnection.Open();
 
-                string datagrid = "SELECT * FROM public.clientes order by pedido;";
+                string datagrid;
+
+                if (txt_busca.Text == "")
+                {
+                    datagrid = "SELECT * FROM public.clientes order by pedido;";
+                }
+                else
+                {
+                    datagrid = "SELECT * FROM public.clientes where pedido = '"+ txt_busca.Text +"'order by pedido;";
+                }               
 
                 NpgsqlCommand cmd = new NpgsqlCommand(datagrid, pgsqlConnection);
 
                 NpgsqlDataReader dgv = cmd.ExecuteReader();
 
-                foreach (var db in dgv)
+                if (dgv.HasRows)
                 {
-                    string pedido = dgv["pedido"].ToString();
-                    string nome = dgv["nome"].ToString();
-                    string descricao = dgv["descricao"].ToString();
-                    double valor = Convert.ToDouble(dgv["valor"].ToString());
-                    string pagamento = dgv["pagamento"].ToString();
-                    string status = dgv["status"].ToString();
-                    DateTime data_entrada = Convert.ToDateTime(dgv["entrada"].ToString());
-
-                    if (status == "Pendente pagamento" || status == "1ª Parcela Paga")
-                    {                        
-                        qnt += 1;
-                    }
-
-                    if (dgv["saida"].ToString() != "")
+                    foreach (var db in dgv)
                     {
-                        DateTime data_saida = Convert.ToDateTime(dgv["saida"].ToString());
-                        string[] nova_linha = new string[]
+                        string pedido = dgv["pedido"].ToString();
+                        string nome = dgv["nome"].ToString();
+                        string descricao = dgv["descricao"].ToString();
+                        double valor = Convert.ToDouble(dgv["valor"].ToString());
+                        string pagamento = dgv["pagamento"].ToString();
+                        string status = dgv["status"].ToString();
+                        DateTime data_entrada = Convert.ToDateTime(dgv["entrada"].ToString());
 
-                                                    {
+                        if (status == "Pendente pagamento" || status == "1ª Parcela Paga")
+                        {
+                            qnt += 1;
+                        }
+
+                        if (dgv["saida"].ToString() != "")
+                        {
+                            DateTime data_saida = Convert.ToDateTime(dgv["saida"].ToString());
+                            string[] nova_linha = new string[]
+
+                                                        {
                                                     pedido,
                                                     nome,
                                                     descricao,
@@ -79,14 +90,14 @@ namespace JRS_Controle.Formularios
                                                     status,
                                                     data_entrada.ToString("dd/MM/yyyy HH:mm:ss"),
                                                     data_saida.ToString("dd/MM/yyyy HH:mm:ss")
-        };
-                        dgv_clientes.Rows.Add(nova_linha);
-                    }
-                    else
-                    {
-                        string[] nova_linha = new string[]
+            };
+                            dgv_clientes.Rows.Add(nova_linha);
+                        }
+                        else
+                        {
+                            string[] nova_linha = new string[]
 
-                                                    {
+                                                        {
                                                     pedido,
                                                     nome,
                                                     descricao,
@@ -94,15 +105,26 @@ namespace JRS_Controle.Formularios
                                                     pagamento,
                                                     status,
                                                     data_entrada.ToString("dd/MM/yyyy HH:mm:ss")
-        };
-                        dgv_clientes.Rows.Add(nova_linha);
+            };
+                            dgv_clientes.Rows.Add(nova_linha);
+                        }
                     }
-                }                
+                }                               
             }
             finally
             {
                 pgsqlConnection.Close();
             }
+        }
+
+        private void txt_busca_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && e.KeyChar != (char)8) { e.Handled = true; }
+        }
+
+        private void txt_busca_TextChanged(object sender, EventArgs e)
+        {
+            preenchedgv();
         }
     }
 }

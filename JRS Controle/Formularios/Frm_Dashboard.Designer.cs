@@ -30,10 +30,11 @@ namespace JRS_Controle.Formularios
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Dashboard));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnl_principal = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
             this.pcb_gif = new System.Windows.Forms.PictureBox();
             this.lbl_quantidade = new System.Windows.Forms.Label();
             this.btn_refresh = new System.Windows.Forms.Button();
@@ -47,16 +48,19 @@ namespace JRS_Controle.Formularios
             this.Data_Entrada = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Data_Saida = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lbl_titulo = new System.Windows.Forms.Label();
-            this.panel5 = new System.Windows.Forms.Panel();
+            this.txt_busca = new System.Windows.Forms.TextBox();
+            this.lbl_busca = new System.Windows.Forms.Label();
             this.pnl_principal.SuspendLayout();
+            this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcb_gif)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_clientes)).BeginInit();
-            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnl_principal
             // 
             this.pnl_principal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(66)))), ((int)(((byte)(82)))));
+            this.pnl_principal.Controls.Add(this.txt_busca);
+            this.pnl_principal.Controls.Add(this.lbl_busca);
             this.pnl_principal.Controls.Add(this.panel5);
             this.pnl_principal.Controls.Add(this.btn_refresh);
             this.pnl_principal.Controls.Add(this.dgv_clientes);
@@ -66,6 +70,15 @@ namespace JRS_Controle.Formularios
             this.pnl_principal.Name = "pnl_principal";
             this.pnl_principal.Size = new System.Drawing.Size(1097, 616);
             this.pnl_principal.TabIndex = 3;
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.pcb_gif);
+            this.panel5.Controls.Add(this.lbl_quantidade);
+            this.panel5.Location = new System.Drawing.Point(33, 564);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(295, 52);
+            this.panel5.TabIndex = 7;
             // 
             // pcb_gif
             // 
@@ -110,22 +123,22 @@ namespace JRS_Controle.Formularios
             // 
             // dgv_clientes
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.dgv_clientes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle16.BackColor = System.Drawing.Color.White;
+            this.dgv_clientes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle16;
             this.dgv_clientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_clientes.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgv_clientes.BackgroundColor = System.Drawing.Color.White;
             this.dgv_clientes.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgv_clientes.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgv_clientes.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_clientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_clientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
             this.dgv_clientes.ColumnHeadersHeight = 21;
             this.dgv_clientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.N_pedido,
@@ -136,14 +149,14 @@ namespace JRS_Controle.Formularios
             this.Status,
             this.Data_Entrada,
             this.Data_Saida});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_clientes.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle18.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_clientes.DefaultCellStyle = dataGridViewCellStyle18;
             this.dgv_clientes.EnableHeadersVisualStyles = false;
             this.dgv_clientes.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgv_clientes.Location = new System.Drawing.Point(33, 76);
@@ -236,14 +249,27 @@ namespace JRS_Controle.Formularios
             this.lbl_titulo.TabIndex = 1;
             this.lbl_titulo.Text = "Bem vindo";
             // 
-            // panel5
+            // txt_busca
             // 
-            this.panel5.Controls.Add(this.pcb_gif);
-            this.panel5.Controls.Add(this.lbl_quantidade);
-            this.panel5.Location = new System.Drawing.Point(33, 564);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(295, 52);
-            this.panel5.TabIndex = 7;
+            this.txt_busca.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.txt_busca.Location = new System.Drawing.Point(947, 50);
+            this.txt_busca.Name = "txt_busca";
+            this.txt_busca.Size = new System.Drawing.Size(86, 26);
+            this.txt_busca.TabIndex = 39;
+            this.txt_busca.TextChanged += new System.EventHandler(this.txt_busca_TextChanged);
+            this.txt_busca.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_busca_KeyPress);
+            // 
+            // lbl_busca
+            // 
+            this.lbl_busca.AutoSize = true;
+            this.lbl_busca.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_busca.Font = new System.Drawing.Font("Century Gothic", 14F);
+            this.lbl_busca.ForeColor = System.Drawing.Color.White;
+            this.lbl_busca.Location = new System.Drawing.Point(805, 51);
+            this.lbl_busca.Name = "lbl_busca";
+            this.lbl_busca.Size = new System.Drawing.Size(141, 22);
+            this.lbl_busca.TabIndex = 38;
+            this.lbl_busca.Text = "Busca pedido:";
             // 
             // Frm_Dashboard
             // 
@@ -257,10 +283,10 @@ namespace JRS_Controle.Formularios
             this.Text = "Frm_Dashboard";
             this.pnl_principal.ResumeLayout(false);
             this.pnl_principal.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pcb_gif)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_clientes)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pcb_gif)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_clientes)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -282,5 +308,7 @@ namespace JRS_Controle.Formularios
         private System.Windows.Forms.DataGridViewTextBoxColumn Data_Entrada;
         private System.Windows.Forms.DataGridViewTextBoxColumn Data_Saida;
         private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.TextBox txt_busca;
+        private System.Windows.Forms.Label lbl_busca;
     }
 }

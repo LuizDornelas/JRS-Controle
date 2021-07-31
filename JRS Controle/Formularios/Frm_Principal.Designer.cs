@@ -31,7 +31,10 @@ namespace JRS_Controle
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Principal));
             this.pnl_barra = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.btn_maximizar = new System.Windows.Forms.PictureBox();
             this.btn_encerrar = new System.Windows.Forms.PictureBox();
+            this.btn_restaurar = new System.Windows.Forms.PictureBox();
             this.pnl_principal = new System.Windows.Forms.Panel();
             this.ptb_logo = new System.Windows.Forms.PictureBox();
             this.btn_principal = new System.Windows.Forms.Button();
@@ -48,17 +51,14 @@ namespace JRS_Controle
             this.btn_atualiza_usuario = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btn_maximizar = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.btn_restaurar = new System.Windows.Forms.PictureBox();
             this.pnl_barra.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_maximizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_encerrar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_restaurar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptb_logo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnsalir)).BeginInit();
             this.btn_encerrar_2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_maximizar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_restaurar)).BeginInit();
             this.SuspendLayout();
             // 
             // pnl_barra
@@ -75,6 +75,29 @@ namespace JRS_Controle
             this.pnl_barra.TabIndex = 0;
             this.pnl_barra.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnl_barra_MouseDown);
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(1222, 3);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(34, 32);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 2;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Tag = "";
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
+            // btn_maximizar
+            // 
+            this.btn_maximizar.Location = new System.Drawing.Point(0, 0);
+            this.btn_maximizar.Name = "btn_maximizar";
+            this.btn_maximizar.Size = new System.Drawing.Size(100, 50);
+            this.btn_maximizar.TabIndex = 3;
+            this.btn_maximizar.TabStop = false;
+            // 
             // btn_encerrar
             // 
             this.btn_encerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -89,6 +112,14 @@ namespace JRS_Controle
             this.btn_encerrar.TabStop = false;
             this.btn_encerrar.Tag = "";
             this.btn_encerrar.Click += new System.EventHandler(this.btn_encerrar_Click);
+            // 
+            // btn_restaurar
+            // 
+            this.btn_restaurar.Location = new System.Drawing.Point(0, 0);
+            this.btn_restaurar.Name = "btn_restaurar";
+            this.btn_restaurar.Size = new System.Drawing.Size(100, 50);
+            this.btn_restaurar.TabIndex = 4;
+            this.btn_restaurar.TabStop = false;
             // 
             // pnl_principal
             // 
@@ -299,51 +330,6 @@ namespace JRS_Controle
             this.label1.TabIndex = 17;
             this.label1.Text = "Desenvolvido por:";
             // 
-            // btn_maximizar
-            // 
-            this.btn_maximizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_maximizar.BackColor = System.Drawing.Color.Transparent;
-            this.btn_maximizar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_maximizar.Image = ((System.Drawing.Image)(resources.GetObject("btn_maximizar.Image")));
-            this.btn_maximizar.Location = new System.Drawing.Point(1222, 3);
-            this.btn_maximizar.Name = "btn_maximizar";
-            this.btn_maximizar.Size = new System.Drawing.Size(34, 32);
-            this.btn_maximizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btn_maximizar.TabIndex = 1;
-            this.btn_maximizar.TabStop = false;
-            this.btn_maximizar.Tag = "";
-            this.btn_maximizar.Click += new System.EventHandler(this.btn_maximizar_Click);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(1182, 3);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(34, 32);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 2;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Tag = "";
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
-            // 
-            // btn_restaurar
-            // 
-            this.btn_restaurar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_restaurar.BackColor = System.Drawing.Color.Transparent;
-            this.btn_restaurar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_restaurar.Image = ((System.Drawing.Image)(resources.GetObject("btn_restaurar.Image")));
-            this.btn_restaurar.Location = new System.Drawing.Point(1222, 3);
-            this.btn_restaurar.Name = "btn_restaurar";
-            this.btn_restaurar.Size = new System.Drawing.Size(34, 32);
-            this.btn_restaurar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btn_restaurar.TabIndex = 3;
-            this.btn_restaurar.TabStop = false;
-            this.btn_restaurar.Tag = "";
-            this.btn_restaurar.Click += new System.EventHandler(this.btn_restaurar_Click);
-            // 
             // Frm_Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -358,14 +344,14 @@ namespace JRS_Controle
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "JRS Controle";
             this.pnl_barra.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_maximizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_encerrar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_restaurar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptb_logo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnsalir)).EndInit();
             this.btn_encerrar_2.ResumeLayout(false);
             this.btn_encerrar_2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_maximizar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_restaurar)).EndInit();
             this.ResumeLayout(false);
 
         }

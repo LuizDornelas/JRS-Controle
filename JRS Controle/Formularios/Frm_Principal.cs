@@ -85,20 +85,6 @@ namespace JRS_Controle
         private void pictureBox2_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
-        }     
-
-        private void btn_maximizar_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Maximized;
-            btn_maximizar.Visible = false;
-            btn_restaurar.Visible = true;
-        }
-
-        private void btn_restaurar_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Normal;
-            btn_maximizar.Visible = true;
-            btn_restaurar.Visible = false;
         }
     }
 }
